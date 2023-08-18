@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+  </style>
+  <title>python</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="Pyth.css">
+
+</head>
+<body>
+<body class="bg-black">
+    <header>
+        <nav class="navbar" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Python</a>
+
+            </div>
+
+        </nav>
+    </header>
+  
+    <dl>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <!-- Line Number-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+        <!-- Unescaped Markup-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/unescaped-markup/prism-unescaped-markup.min.css" rel="stylesheet" />
+
+        <dt>Python とは</dt>
+        <dd>・Pythonは1991年にグイド・ヴァン・ロッサムにより開発されたプログラミング言語である。</dd>
+        <dd>・最初にリリースされたPythonの設計哲学は、ホワイトスペース(オフサイドルール)の顕著な使用によってコードの可読性を重視している。</dd>
+        <dd>・その言語構成とオブジェクト指向のアプローチは、プログラマが小規模なプロジェクトから大規模なプロジェクトまで、 </dd>
+        <dd>&nbsp;&nbsp;&nbsp;明確で論理的なコードを書くのを支援することを目的としている。</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #魔法の言葉
+            # coding: utf-8
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # hello worldと表示する
+            print("hello world")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #コメント方法
+            # comment
+            （半角シャープ入力）コメントアウト
+
+            '''
+            print("シングルクォーテーションで")
+            print("囲まれたこの３行の部分は")
+            print("複数行コメントとして実行結果に表示されない")
+            '''
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #HTMLを表示する
+            print("<h1>hello world</h1>")
+            print("<p>世界の皆さん、")
+            print("<b>こんにちは！</b></p>")
+
+            #print関数で改行したくない場合、文字列を「,」で区切る
+            print("<h1>hello world</h1>", "<p>世界の皆さん、", "<b>こんにちは</b></p>")
+            #もしくはカッコの中に「,end=""」
+            print("<h1>hello world</h1>", end="")
+            print("<p>世界の皆さん、", end="")
+            print("<b>こんにちは</b></p>", end="")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #変数について
+            player = "勇者" #文字データ代入
+            number = 100 #数字データ代入
+            print(player + "は、荒野を歩いていた")
+            print(player + "は、モンスターと戦った")
+            print(player + "は、モンスターをたおした")
+            print(number)
+            print("スライムが"+ str(number) + "匹あらわれた")
+            #文字と数字を混入させる場合は、str()で文字に変えてあげる
+
+            #勇者は、荒野を歩いていた
+            #勇者は、モンスターと戦った
+            #勇者は、モンスターをたおした
+            #100
+            #スライムが100匹あらわれた
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #乱数
+            import random
+            num = random.random()
+            number = random.randint(1,100)
+            print(num)
+            print("スライムが"+ str(number) + "匹あらわれた")
+
+            #0.9346781846712117
+            #スライムが18匹あらわれた
+
+            import random
+            number = random.randint(1,6)
+            print("サイコロの目は"+ str(number) + "です。")
+
+            #サイコロの目はxです。
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #演算子
+            number = 100
+            print(number)
+            print(number + 30)#加算
+            print(number - 30)#減算
+            print(number * 30)#掛算
+            print(number / 20)#割算
+            print(number % 3) #余算
+            print(10 + 3 * 2)     #優先順位　掛け割りが先
+            print((10 + 3) * 2)   #優先順位　（）が先
+
+            #100
+            #130
+            #70
+            #3000
+            #5.0
+            #1
+            #16
+            #26
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #値段を計算する
+            import random
+            apple_price=random.randint(1,3)*100	#リンゴの単価
+            apple_num=random.randint(1,10)	#リンゴを買う数
+            print("リンゴの単価："+str(apple_price)+"円")
+            print("リンゴを買う数："+str(apple_num)+"個")
+            total=apple_price*apple_num
+            print("合計金額："+str(total)+"円")
+
+            #リンゴの単価：300円
+            #リンゴを買う数：6個
+            #合計金額：1800円
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #if文
+
+            '''
+            if 条件式:
+                条件が成立した時の条件(インデントする)
+            '''
+            import random
+            number = random.randint(1,3)
+            if number == 1:
+                print("スキ！")
+            elif number == 2:
+                print("フツウ！")
+            else:
+                print("キライ！")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #論理演算子は書き方が異なる
+            import random
+            omikuji = random.randint(1, 100)
+
+            if omikuji >= 30 and omikuji <= 100:
+                print("omikujiの中身は" + str(omikuji) + "なので大吉")
+            else:
+                print("omikujiの中身は" + str(omikuji) + "なので大凶")
+
+            #and or not を活用せよ
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 西暦を昭和年に変換
+            import random
+            seireki = random.randint(1926, 1988) #西暦年
+            print("西暦" + str(seireki) + "年は", end = "")
+
+            #西暦を昭和年に変換
+            showa = (seireki-1900) - 25
+            # 昭和年を出力
+            if showa == 0:
+                print("昭和1年です")
+            else:
+                print("昭和" + str(showa) + "年です")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #西暦を平成年に変換
+            import random
+            seireki = random.randint(1989,2015)
+            print("西暦" + str(seireki) + "年は、",end="")
+            heisei = seireki - 1988
+            print("平成"+str(heisei)+"年です。")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #西暦を令和年に変換
+            import random
+            ad_year = random.randint(2019, 2099) #西暦年
+            print("西暦" + str(ad_year) + "年は", end = "")
+            era_year = (ad_year-2000) - 18
+            # 令和年を出力
+            if era_year == 0:
+                print("令和1年です")
+            else:
+                print("令和" + str(era_year) + "年です")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #現在の日付取得
+            import datetime
+            nowyear = datetime.date.today().year
+            nowmonth = datetime.date.today().month
+            nowday = datetime.date.today().day
+            print(str(nowyear)+"年",end="")
+            print(str(nowmonth)+"月",end="")
+            print(str(nowday)+"日",end="")
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # for inによるループ処理
+
+            '''
+            for カウンタ変数 in 繰り返す範囲:
+                繰り返し処理
+            '''
+            #1-10までの数を表示
+            for i in range(10):
+                print(i+1)
+
+            #7-10まで処理を繰り返す
+            for j in range(7,11):
+                print(j)
+
+            #1-12月の表示
+            for i in range(1,13):
+                print(str(i)+"月")
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # whileによるループ処理
+
+            '''
+            カウンタ変数を初期化
+            while 条件式:
+                繰り返し処理
+                カウンタ変数を更新
+            '''
+
+            i = 1
+            while i <= 10:
+                print(i)
+                i = i+1
+
+            #代入演算子　i += 1
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #繰り返しでHTMLを作成
+            #年齢入力のプルダウン作成
+            print("年齢を選択してください")
+            print("<select name=\'age\'>")
+            print("<option>1才</option>")
+            print("<option>2才</option>")
+            print("</select>")
+
+            #for文で簡潔に
+            print("年齢を選択してください")
+            print("<select name=\'age\'>")
+            for age in range(100):
+                print("<option>"+str(age+1)+"歳</option>")
+            print("/select")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # HTMLによる箇条書き
+            print("<ul>")
+            for list in range(100):
+                print("<li>"+str(list+1)+"</li>")
+            print("</ul>")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #inputによる入力処理 標準入力
+            line = input()
+            print("hello! "+line+"!")
+
+            #hello! 入力文字!
+
+            num = int(input())
+            print(num*10)
+
+            #入力数字x10 の数字が返還される
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #複数行の標準入力
+            #標準入力とループ処理
+            count = int(input())
+            print("データ個数 " + str(count))
+
+            for i in range(count):
+                line = input().rstrip()
+                print("hello " + line)
+
+            '''
+            入力
+
+            3
+            sakana
+            tara
+            unagi
+
+            出力
+
+            データ個数 3
+            hello sakana
+            hello tara
+            hello unagi
+            '''
+        </script>
+                        
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #西暦年と昭和年の対応表
+            #1926年から1988年までをループで出力
+            #ループ内で、各西暦年を昭和年に変換
+            for seireki in range(1926,1989):
+                print("西暦"+str(seireki)+"年は、",end="")
+                syouwa = seireki - 1925
+                print("昭和"+str(syouwa)+"年です。")
+        </script>
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #西暦年と平成年の対応表を作る
+            #1989年から2016年までをループで出力
+            #ループ内で、各西暦年を平成年に変換
+            for seireki in range(1989,2017):
+                print("西暦"+str(seireki)+"年は、",end="")
+                heisei = seireki - 1988
+                print("平成"+str(heisei)+"年です。")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # リストを作成する
+            player_1 = "戦士"
+            team = ["勇者", "魔法使い", 100, player_1]
+            print(team)
+
+
+            num = 1
+            team = ["勇者", "魔法使い"]
+            print(team[0])#直接数値指定
+            print(team[num])#変数指定
+            print(len(team))#要素の数
+
+            #勇者
+            #魔法使い
+            #2
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # リストの要素を操作する
+
+            team = ["勇者", "魔法使い"]              #勇者、魔法使い
+            #append関数　リストの末尾に要素を追加
+            team.append("戦士")                      #勇者、魔法使い、戦士
+            #リストの要素を上書き
+            team[0] = "ドラゴン"                     #ドラゴン、魔法使い、戦士
+            #リストの要素を削除
+            team.pop(1)                              #ドラゴン、戦士
+
+            print(team)
+
+            #['ドラゴン', '戦士']
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #ループでリストを操作する
+
+            team = ["勇者", "戦士", "魔法使い"]
+            for i in team:
+                print(i)
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #カンマ区切りデータをsplitで分割
+            line = input().rstrip()
+
+            #与えられたデータを指定の記号で分割　split関数　リストとして戻す
+            line = "勇者,戦士,魔法使い"
+            print(line.split(","))
+
+            #英文の英単語の数を数える
+            str = "One cold rainy day when my father was a little boy he met an old alley cat on his street"
+            print(len(str.split(" ")))
+
+            #複数行データをリストに格納
+            #sys.stdin.readlines関数 ファイルを全て読み込み、1行毎に処理
+
+            import sys
+            line = sys.stdin.readlines()
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 複数行のカンマ区切りデータを出力する
+
+            import sys
+            for line in sys.stdin.readlines():
+                # ここに、文字列を分割して、出力するコードを書く
+                enemy = line.rstrip().split(",")
+                print(enemy[0] + "が" + enemy[1] + "匹現れた")
+        </script>
+
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # coding: utf-8
+            # じゃんけんプログラム
+
+            import random
+            # 標準入力から1行取得
+            line = input().rstrip()
+
+            # カンマで分割して、リストに代入
+            janken = line.split(",")
+
+            # リストの要素数を変数に代入
+            num = len(janken)
+
+            # リストの中身を出力
+            print(janken)
+
+            # ランダムに選んだリストの要素を出力
+            print(janken[random.randrange(num)])
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # coding: utf-8
+            # おみくじプログラム
+
+            import random
+            # 標準入力から1行取得
+            line = input().rstrip()
+
+            # カンマで分割して、リストに代入
+            omikuji = line.split(",")
+            # リストの要素数を変数に代入
+            num = len(omikuji)
+            # リストの中身を出力
+            print(omikuji)
+            # ランダムに選んだリストの要素を出力
+            print(omikuji[random.randrange(num)])
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 辞書の具体例
+            enemyDictionary = {"ザコ":"スライム", "中ボス":"ドラゴン", "ラスボス":"魔王"}
+            print(enemyDictionary)
+            print(enemyDictionary["中ボス"])
+
+            level = "ラスボス"
+            print(enemyDictionary[level])
+            # print(enemyDictionary["敵"]) error!
+
+            #{'ザコ': 'スライム', '中ボス': 'ドラゴン', 'ラスボス': '魔王'}
+            #ドラゴン
+            #魔王
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #RPG　辞書型例
+            skills = {'職業':'戦士','体力':100,'魔法力':200,'ゴールド':380}]
+            print(skills)
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 辞書の基本操作
+            enemies = {"ザコ":"スライム", "中ボス":"ドラゴン", "ラスボス":"魔王"}
+            print(enemies)
+
+            enemies["ザコ2"] = "メタルモンスター"#   データの追加
+            print(enemies)
+            print(len(enemies))
+
+            enemies["中ボス"] = "レッドドラゴン"#    データの変更
+            print(enemies)
+            print(len(enemies))
+
+            del enemies["ザコ"]#                     データの削除
+            print(enemies)
+            print(len(enemies))
+
+            #{'ザコ': 'スライム', '中ボス': 'ドラゴン', 'ラスボス': '魔王'}
+            #{'ザコ': 'スライム', '中ボス': 'ドラゴン', 'ラスボス': '魔王', 'ザコ2': 'メタルモンスター'}
+            #4
+            #{'ザコ': 'スライム', '中ボス': 'レッドドラゴン', 'ラスボス': '魔王', 'ザコ2': 'メタルモンスター'}
+            #4
+            #{'中ボス': 'レッドドラゴン', 'ラスボス': '魔王', 'ザコ2': 'メタルモンスター'}
+            #3
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 辞書をループで処理する
+
+            enemies = {"ザコ":"スライム", "中ボス":"ドラゴン", "ラスボス":"魔王"}
+            print(enemies)
+            print(enemies["中ボス"])
+
+            for rank in enemies:
+                print(enemies[rank] + "が、あらわれた！")
+            for (rank, enemy) in enemies.items():
+                print(rank + "の" + enemy + "が、あらわれた！")
+
+            #{'ザコ': 'スライム', '中ボス': 'ドラゴン', 'ラスボス': '魔王'}
+            #ドラゴン
+            #スライムが、あらわれた！
+            #ドラゴンが、あらわれた！
+            #魔王が、あらわれた！
+            #ザコのスライムが、あらわれた！
+            #中ボスのドラゴンが、あらわれた！
+            #ラスボスの魔王が、あらわれた！
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # リストの整列 ソート
+            weapons = ["イージスソード", "ウィンドスピア", "アースブレイカー", "イナズマハンマー"]
+            print(weapons)
+
+            print(sorted(weapons))#五十音　順
+            print(sorted(weapons, reverse=True))#五十音　逆順
+
+            weapons2 = ["4.イージスソード", "1.ウィンドスピア", "3.アースブレイカー", "2.イナズマハンマー"]
+            print(sorted(weapons2))#数字順
+
+            weapons3 = ["バーニングソード", "風神スピア", "大地ブレイカー", "稲妻ハンマー"]
+            print(sorted(weapons3))#漢字は文字コードの順番になる
+
+            #['イージスソード', 'ウィンドスピア', 'アースブレイカー', 'イナズマハンマー']
+            #['アースブレイカー', 'イナズマハンマー', 'イージスソード', 'ウィンドスピア']
+            #['ウィンドスピア', 'イージスソード', 'イナズマハンマー', 'アースブレイカー']
+            #['1.ウィンドスピア', '2.イナズマハンマー', '3.アースブレイカー', '4.イージスソード']
+            #['バーニングソード', '大地ブレイカー', '稲妻ハンマー', '風神スピア']
+
+
+            # 辞書の整列
+            weapons = {"イージスソード":40, "ウィンドスピア":12, "アースブレイカー":99}
+            print(sorted(weapons))
+            print(weapons)
+            print(sorted(weapons.items()))
+
+            #['アースブレイカー', 'イージスソード', 'ウィンドスピア']
+            #{'イージスソード': 40, 'ウィンドスピア': 12, 'アースブレイカー': 99}
+            #[('アースブレイカー', 99), ('イージスソード', 40), ('ウィンドスピア', 12)]
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #RPG アイテムリスト
+
+            # 画像用辞書
+            item_images = {
+                "剣":"http://paiza.jp/learning/images/sword.png",
+                "盾":"http://paiza.jp/learning/images/shield.png",
+                "回復薬":"http://paiza.jp/learning/images/potion.png",
+                "クリスタル":"http://paiza.jp/learning/images/crystal.png"
+            }
+
+            # アイテムの並び順配列
+            item_orders = ["クリスタル", "回復薬", "盾", "剣", "回復薬", "回復薬"]
+
+            #print(item_images)
+            #print(item_orders)
+
+            # アイテム名を取り出す
+            for item_name in item_orders:
+            # 画像ファイル名を取り出す
+                print("<img src='" + item_images[item_name] + "'>")
+                print(item_name + "<br>")
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #入力対応のアイテムリスト
+
+            # 画像用辞書
+            items_images = {
+                "剣" : "http://paiza.jp/learning/images/sword.png",
+                "盾" : "http://paiza.jp/learning/images/shield.png",
+                "回復薬" : "http://paiza.jp/learning/images/potion.png",
+                "クリスタル" : "http://paiza.jp/learning/images/crystal.png"
+            }
+
+            # ここから下を記述しよう
+            line = int(input())
+            for i in range(line):
+                item = input().rstrip()
+                print("<img src='" + items_images[item] + "'>")
+
+            #＜入力＞
+            #6
+            #回復薬
+            #盾
+            #クリスタル
+            #クリスタル
+            #剣
+            #剣
+
+            #＜出力＞
+            #名前に対応した画像が表示される
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #二次元リストの用途
+            #- RPGのマップ
+            #- 写真・イラストなどのイメージ
+            #- 3D-CGの空間座標
+            #- ゲームの盤面
+            #- 表形式データ
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 2次元リストを作成する
+            team_c = ["勇者", "戦士", "魔法使い"]
+            team_d = ["盗賊", "忍者", "商人"]
+            team_e = ["スライム", "ドラゴン", "魔王"]
+
+            teams = [team_c, team_d, team_e]
+            print(teams[0][2])
+            print(teams[1][1])
+            print(teams[2][1])
+
+            #要素更新
+            teams[0][0] = "魔導士"
+            print(teams[0])
+
+            #要素の長さ
+            print(len(teams))
+
+            #要素の追加
+            teams.append(["メタルモンスター", "シルバーモンスター", "ブラックモンスター"])
+            teams[0].append("レッドドラゴン")
+            print(teams)
+
+            #要素の削除
+            del teams[1]
+            del teams[0][1]
+            print(teams)
+
+            #魔法使い
+            #忍者
+            #ドラゴン
+            #['魔導士', '戦士', '魔法使い']
+            #3
+            #[['魔導士', '戦士', '魔法使い', 'レッドドラゴン'], ['盗賊', '忍者', '商人'], ['スライム', 'ドラゴン', '魔王'], ['メタルモンスター', 'シルバーモンスター', 'ブラックモンスター']]
+            #[['魔導士', '魔法使い', 'レッドドラゴン'], ['スライム', 'ドラゴン', '魔王'], ['メタルモンスター', 'シルバーモンスター', 'ブラックモンスター']]
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #ループでリスト処理
+            team = ["勇者", "戦士", "魔法使い"]
+
+            for (i, person) in enumerate(team):
+                print(str(i + 1) + "番目の" + person + "が、スライムと戦った")
+
+            numbers = [3, 1, 4, 1, 5]
+            results = []
+            for item in numbers:
+                results.append(item * 10)
+
+            print(results)
+
+
+            #1番目の勇者が、スライムと戦った
+            #2番目の戦士が、スライムと戦った
+            #3番目の魔法使いが、スライムと戦った
+            #[30, 10, 40, 10, 50]
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 2次元リストをforで作成する
+            numbers = [[1 for i in range(3)] for j in range(4)]
+            numbers[0][1] = 2
+            print(numbers)
+
+            #[[1, 2, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # ドット絵を表示する
+
+            enemy_img = [[0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
+                         [1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                         [1,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1],
+                         [1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,1],
+                         [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+                         [0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0],
+                         [0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,1]]
+
+            for line in enemy_img:
+                for dot in line:
+                    if dot == 1:
+                        print("#", end="")
+                    else:
+                        print(" ", end="")
+                print()
+
+
+              ############
+            ##            ##
+            #  ###   ###   #
+            ##    ##      ##
+             ##############
+               ###     ###
+                ###      ###
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 3次元リストでドット絵を表示する
+
+            enemy_img = [[[0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
+                          [1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                          [1,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1],
+                          [1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,1],
+                          [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+                          [0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0],
+                          [0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,1]],
+                         [[0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
+                          [1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                          [1,0,0,1,1,1,0,0,0,0,1,1,1,0,0,1],
+                          [1,1,0,0,0,0,0,1,1,0,0,0,0,0,1,1],
+                          [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+                          [0,0,0,1,1,1,0,0,0,0,1,1,1,0,0,0],
+                          [0,0,0,1,1,1,0,0,0,0,1,1,1,0,0,0]],
+                         [[0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
+                          [1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                          [1,0,0,0,1,1,1,0,0,0,1,1,1,0,0,1],
+                          [1,1,0,0,0,0,0,0,1,1,0,0,0,0,1,1],
+                          [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+                          [0,0,1,1,1,0,0,0,0,0,0,1,1,1,0,0],
+                          [1,1,1,0,0,0,0,0,0,0,1,1,1,0,0,0]],
+                         [[0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
+                          [1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                          [1,0,0,0,1,1,1,0,0,0,1,1,1,0,0,1],
+                          [1,1,0,0,0,0,0,0,1,1,0,0,0,0,1,1],
+                          [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+                          [0,0,1,1,1,0,0,0,0,0,0,1,1,1,0,0],
+                          [1,1,1,0,0,0,0,0,0,0,1,1,1,0,0,0]]]
+
+            for img in enemy_img:
+                for line in img:
+                    for dot in line:
+                        if dot == 1:
+                            print("#", end="")
+                        else:
+                            print(" ", end="")
+                    print()
+
+
+              ############
+            ##            ##
+            #  ###   ###   #
+            ##    ##      ##
+             ##############
+               ###     ###
+                ###      ###
+              ############
+            ##            ##
+            #  ###    ###  #
+            ##     ##     ##
+             ##############
+               ###    ###
+               ###    ###
+              ############
+            ##            ##
+            #   ###   ###  #
+            ##      ##    ##
+             ##############
+              ###      ###
+            ###       ###
+              ############
+            ##            ##
+            #   ###   ###  #
+            ##      ##    ##
+             ##############
+              ###      ###
+            ###       ###
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 2次元リストで地図を表示する
+            landmap = [["森" for i in range(20)] for j in range(10)]
+            landmap[0][0] = "城"
+            landmap[0][19] = "町"
+            landmap[9][19] = "町"
+            for i,line in enumerate(landmap):
+                print(str(i) + ":", end="")
+                for area in line:
+                    print(area, end="")
+                print()
+
+            #0:城森森森森森森森森森森森森森森森森森森町
+            #1:森森森森森森森森森森森森森森森森森森森森
+            #2:森森森森森森森森森森森森森森森森森森森森
+            #3:森森森森森森森森森森森森森森森森森森森森
+            #4:森森森森森森森森森森森森森森森森森森森森
+            #5:森森森森森森森森森森森森森森森森森森森森
+            #6:森森森森森森森森森森森森森森森森森森森森
+            #7:森森森森森森森森森森森森森森森森森森森森
+            #8:森森森森森森森森森森森森森森森森森森森森
+            #9:森森森森森森森森森森森森森森森森森森森町
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 2次元リストで地図を表示する　偶数行に道を敷く
+
+            landmap = [["森" for i in range(20)] for j in range(10)]
+            landmap[0][0] = "城"
+            landmap[0][19] = "町"
+            landmap[9][19] = "町"
+            for i,line in enumerate(landmap):
+                print(str(i) + ":", end="")
+                for j,area in enumerate(line):
+                    if (i % 2 == 0 or j % 3 == 0) and area == "森":
+                        print("＋", end="")
+                    else:
+                        print(area, end="")
+                print()
+
+
+            #0:城＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋町
+            #1:＋森森＋森森＋森森＋森森＋森森＋森森＋森
+            #2:＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+            #3:＋森森＋森森＋森森＋森森＋森森＋森森＋森
+            #4:＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+            #5:＋森森＋森森＋森森＋森森＋森森＋森森＋森
+            #6:＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+            #7:＋森森＋森森＋森森＋森森＋森森＋森森＋森
+            #8:＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+            #9:＋森森＋森森＋森森＋森森＋森森＋森森＋町
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 複数行テキストに行番号を追加する
+
+            text = ["吾輩は猫である",
+                    "名前はまだ無い",
+                    "どこで生まれたか",
+                    "とんと見当がつかぬ"]
+
+            #ここに、行番号を表示するコードを記述する
+            for i,line in enumerate(text):
+                print(str(i+1) + ":", end="")
+                for area in line:
+                    print(area, end="")
+                print()
+
+            #1:吾輩は猫である
+            #2:名前はまだ無い
+            #3:どこで生まれたか
+            #4:とんと見当がつかぬ
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 標準入力から2次元リスト
+
+            enemy_img = []
+            while True:
+                line = input()
+                if line == "_":
+                    break
+                enemy_img.append(line.split(","))
+
+            # print(enemy_img)
+
+            for line in enemy_img:
+                for dot in line:
+                    if int(dot) == 1:
+                        print("#", end="")
+                    else:
+                        print(" ", end="")
+                print()
+        </script>
+
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 2次元リストで画像を配置
+
+            # 画像用リスト
+            players_img = [
+                "https://paiza-webapp.s3.amazonaws.com/files/learning/rpg/Empty.png",
+                "https://paiza-webapp.s3.amazonaws.com/files/learning/rpg/Dragon.png",
+                "https://paiza-webapp.s3.amazonaws.com/files/learning/rpg/Crystal.png",
+                "https://paiza-webapp.s3.amazonaws.com/files/learning/rpg/Hero.png",
+                "https://paiza-webapp.s3.amazonaws.com/files/learning/rpg/Heroine.png"]
+
+            # 配置データを読み込み
+            team = []
+            while True:
+                line = input()
+                if line == "_":
+                    break
+                team.append(line.split(","))
+            # print(team)
+
+            # 配置に合わせて表示
+            print("<table>")
+            for line in team:
+                print("<tr>")
+                #print(line)
+                for person in line:
+                    print("<td><img src='" + players_img[int(person)] + "'></td>")
+                print("</tr>")
+            print("</table>")
+        </script>
+
+
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 関数を作る
+            def say_hello():
+                print("hello world")
+
+            say_hello()
+            say_hello()
+
+            #＜出力＞
+            #hello world
+            #hello world
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 引数と戻り値を追加する
+            def sum(x, y):
+                return x + y
+
+            num1 = sum(3, 4)
+            print(num1)
+            num2 = sum(300, 400)
+            print(num2)
+
+            #<>
+            #7
+            #700
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 九九の表を作成してみよう
+
+            def multiply(x, y):
+                return x * y
+
+            for step in range(1, 10):
+                for num in range(1, 10):
+                    print(multiply(step, num), end="")
+                    if num < 9:
+                        print(", ", end="")
+                print("")
+
+            #1, 2, 3, 4, 5, 6, 7, 8, 9
+            #2, 4, 6, 8, 10, 12, 14, 16, 18
+            #3, 6, 9, 12, 15, 18, 21, 24, 27
+            #4, 8, 12, 16, 20, 24, 28, 32, 36
+            #5, 10, 15, 20, 25, 30, 35, 40, 45
+            #6, 12, 18, 24, 30, 36, 42, 48, 54
+            #7, 14, 21, 28, 35, 42, 49, 56, 63
+            #8, 16, 24, 32, 40, 48, 56, 64, 72
+            #9, 18, 27, 36, 45, 54, 63, 72, 81
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # RPGの攻撃シーン
+            import random
+
+            def attack(enemy):
+                print("勇者は、" + enemy + "を攻撃した。")
+                hit = random.randint(1,10)
+                if hit < 6:
+                    print(enemy + "に、" + str(hit) + "のダメージを与えた！")
+                else:
+                    print("クリティカルヒット！" + enemy + "に、100のダメージを与えた！！")
+
+            enemies = ["スライム", "モンスター", "ドラゴン"]
+            for enemy in enemies:
+                # print("勇者は、" + enemy + "を攻撃した。")
+                attack(enemy)
+
+            #勇者は、スライムを攻撃した。
+            #クリティカルヒット！スライムに、100のダメージを与えた！！
+            #勇者は、モンスターを攻撃した。
+            #モンスターに、2のダメージを与えた！
+            #勇者は、ドラゴンを攻撃した。
+            #ドラゴンに、3のダメージを与えた！
+        </script>
+
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 引数のデフォルト値
+            def introduce(greeting, name = "村人"):
+                print("私は" + name + "です。" + greeting)
+
+            introduce("こんにちは", "勇者")
+            introduce("こんにちは")
+
+            # 可変長引数
+
+            def introduce(greeting, *names):
+                for name in names:
+                    print("私は" + name + "です。" + greeting)
+
+            introduce("こんにちは", "勇者", "村人", "兵士")
+
+            # 可変長引数 - 辞書
+
+            def introduce(**people):
+                for name, greeting in people.items():
+                    print("私は" + name + "です。" + greeting)
+
+            introduce(hero = "はじめまして", villager = "こんにちは", soldier = "よろしくお願いします")
+
+
+
+            #私は勇者です。こんにちは
+            #私は村人です。こんにちは
+            #私は勇者です。こんにちは
+            #私は村人です。こんにちは
+            #私は兵士です。こんにちは
+            #私はheroです。はじめまして
+            #私はvillagerです。こんにちは
+            #私はsoldierです。よろしくお願いします
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # キーワード引数
+
+            def say_hello(greeting = "hello", target = "world"):
+                print(greeting + " " + target)
+
+            say_hello()
+            say_hello("こんにちは", "皆さん")
+            say_hello("good morning!")
+            say_hello(greeting = "ネコ先生", target = "皆さん")
+            say_hello(target = "ネコ先生", greeting = "おはようございます")
+            say_hello(target = "ネコ先生")
+            say_hello(greeting = "おはようございます")
+
+            #hello world
+            #こんにちは 皆さん
+            #good morning! world
+            #ネコ先生 皆さん
+            #おはようございます ネコ先生
+            #hello ネコ先生
+            #おはようございます world
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # クラスを作成する
+            class Player:
+                def walk(self):
+                    print("勇者は荒野を歩いていた")
+
+                def attack(self, enemy):
+                    print("勇者は" + enemy + "を攻撃した")
+
+            player1 = Player()
+            player1.walk()
+            player1.attack("スライム")
+
+            #勇者は荒野を歩いていた
+            #勇者はスライムを攻撃した
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 変数をクラスで管理する
+            class Player:
+                def __init__(self, job):
+                    self.job = job
+
+                def walk(self):
+                    print(self.job + "は荒野を歩いていた")
+
+            player1 = Player("戦士")
+            player1.walk()
+
+            #戦士は荒野を歩いていた
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # RPGの敵クラスを作る
+
+            class Enemy:
+                def __init__(self, name):
+                    self.name = name
+
+                def attack(self):
+                    print(self.name + "は勇者を攻撃した")
+
+            enemies = []
+            enemies.append(Enemy("スライム"))
+            enemies.append(Enemy("モンスター"))
+            enemies.append(Enemy("ドラゴン"))
+
+            for enemy in enemies:
+                enemy.attack()
+
+            #スライムは勇者を攻撃した
+            #モンスターは勇者を攻撃した
+            #ドラゴンは勇者を攻撃した
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # クラスで、引数と戻り値のあるメソッドを作る
+
+            class Item:
+                tax = 1.08
+
+                def __init__(self, price, quantity):
+                    self.price = price
+                    self.quantity = quantity
+
+                def total(self):
+                    return int(self.price * self.quantity * Item.tax)
+
+            apple = Item(120, 15)
+            total = apple.total()
+            print("合計金額は" + str(total) + "円です")
+
+            orange = Item(85, 32)
+            print("合計金額は" + str(orange.total()) + "円です")
+
+
+            #合計金額は1944円です
+            #合計金額は2937円です
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 文字列とリストのメソッドを使ってみよう
+            text = "pYthon"
+            print(text)
+            print(text.capitalize())
+            print(text.upper())
+
+            players = "勇者,戦士,魔法使い,忍者"
+            list = players.split(",")
+            print(list)
+            list.remove("忍者")
+            print(list)
+            list.append("霧島")
+            print(list)
+
+
+            #pYthon
+            #Python
+            #PYTHON
+            #['勇者', '戦士', '魔法使い', '忍者']
+            #['勇者', '戦士', '魔法使い']
+            #['勇者', '戦士', '魔法使い', '霧島']
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # アクセス制限を理解する
+
+            class Player:
+                def __init__(self, job, weapon):
+                    self.job = job
+                    self.__weapon = weapon
+
+                def walk(self):
+                    print(self.job + "は荒野を歩いていた")
+                    self.__attack("スライム")
+
+                def __attack(self, enemy):
+                    print(self.__weapon + "で" + enemy + "を攻撃")
+
+
+            player1 = Player("戦士", "剣")
+            player1.walk()
+
+
+            #戦士は荒野を歩いていた
+            #剣でスライムを攻撃
+        </script>
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #標準ライブラリ　日付
+
+            from datetime import datetime, timedelta, timezone
+
+            jst   = timezone(timedelta(hours=9))
+            today = datetime.now(jst)
+            print(today)
+            print(today.year)
+            print(today.month)
+            print(today.day)
+
+            day = datetime.strptime("2030/01/10 06:02:19", "%Y/%m/%d %H:%M:%S")
+            print(day)
+        </script>
+
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #例外処理
+            try:
+                number = 0
+                answer = 100 / number
+                print(answer)
+            except ZeroDivisionError as e:
+                print(e)
+            finally:
+                print(2)
+
+            #<>
+            #division by zero
+            #2
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #いろいろな形式で例外に対応せよ
+
+            import traceback, sys
+
+            print(1)
+            try:
+                number = 0
+                answer = 100 / number
+                print(answer)
+            except ZeroDivisionError as e:
+                print("0では割り算できません")
+                # print(traceback.format_exc())
+                sys.stderr.write(traceback.format_exc())
+            finally:
+
+
+            #1
+            #0では割り算できません
+            #2
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #ほかの例外処理　未定義の変数
+
+            print(1)
+            try:
+                number = 1
+                answer = 100 / number
+                print(answer2)
+            except NameError as e:
+                print("未定義の変数を呼び出しています")
+                print(e)
+            finally:
+                print(2)
+
+            #1
+            #未定義の変数を呼び出しています
+            #name 'answer2' is not defined
+            #2
+        </script>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #複数の例外処理
+
+            print(1)
+            try:
+                number = 0
+                answer = 100 / number
+                print(answer2)
+            except Exception as e:
+                print("予期せぬエラーが発生しました")
+                print(e)
+            except ZeroDivisionError as e:
+                print("0では割り算できません")
+                print(e)
+            except NameError as e:
+                print("未定義の変数を呼び出しています")
+                print(e)
+            finally:
+                print(2)
+
+
+            #1
+            #予期せぬエラーが発生しました
+            #division by zero
+            #2
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+                        #意図的な例外
+
+                        print(1)
+                        try:
+                            print(2)
+                            raise BaseException("意図的な例外")
+                            print(3)
+                        except BaseException as e:
+                            print("予期せぬエラーが発生しました")
+                            print(e)
+                        finally:
+                            print(4)
+
+
+                        #1
+                        #2
+                        #予期せぬエラーが発生しました
+                        #意図的な例外
+                        #4
+
+
+        </script>
+
+
+            <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Python Nebiros -</a>
+
+</body>
+</html>

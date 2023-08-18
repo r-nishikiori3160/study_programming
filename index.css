@@ -1,0 +1,195 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,900);
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Lato;
+    color: white;
+}
+
+#page1 {
+    background: #2d2d2d;
+}
+
+.wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.stage {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tabled, .middled {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.thick {
+    font-weight: 900;
+}
+
+a {
+    text-transform: uppercase;
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+p {
+    font-weight: 100;
+    font-size: 80%;
+    margin: 1px;
+    justify-content: center;
+}
+
+[class^="link-"] {
+    display: inline-block;
+    margin: 2em
+}
+
+/* linkone */
+.link-1 a:before, .link-1 a:after {
+    content: '';
+    border-bottom: solid 1px white;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+}
+
+.link-1 a:before {
+    left: 0;
+}
+
+.link-1 a:after {
+    right: 0;
+}
+
+.link-1 a:hover:before, .link-1 a:hover:after {
+    width: 50%;
+}
+
+.link-1 a:before, .link-1 a:after {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+
+
+/*============= title ===============*/
+
+@keyframes updown-anim {
+    0% {
+        transform: translateY(70%); /*表示範囲外から*/
+    }
+
+    5% {
+        transform: translateY(0); /*通常の位置へ*/
+    }
+
+    70% {
+        transform: translateY(0); /*文字が上に揃うまで待機*/
+    }
+
+    80% {
+        transform: translateY(710%); /*下がる*/
+    }
+
+    100% {
+        transform: translateY(710%); /*待機*/
+    }
+}
+
+/*** アニメーションする要素の親 ***/
+.updown {
+    display: flex; /*　横並びに */
+    overflow: hidden; /* はみ出たものを非表示に */
+    align-items: center;
+}
+
+    /*** アニメーションを適用する要素 ***/
+    .updown span {
+        transform: translateY(710%); /*デフォルトで下に隠す*/
+        display: block; /*ブロック要素に*/
+        animation: 4.5s updown-anim linear infinite; /* アニメーション */
+    }
+
+        /*** 各span(文字)に遅延時間delayを設定 ***/
+        .updown span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .updown span:nth-child(2) {
+            animation-delay: 0.05s;
+        }
+
+        .updown span:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+
+        .updown span:nth-child(4) {
+            animation-delay: 0.15s;
+        }
+
+        .updown span:nth-child(5) {
+            animation-delay: 0.2s;
+        }
+
+        .updown span:nth-child(6) {
+            animation-delay: 0.25s;
+        }
+
+        .updown span:nth-child(7) {
+            animation-delay: 0.3s;
+        }
+
+        .updown span:nth-child(8) {
+            animation-delay: 0.35s;
+        }
+
+        .updown span:nth-child(9) {
+            animation-delay: 0.4s;
+        }
+
+        .updown span:nth-child(10) {
+            animation-delay: 0.45s;
+        }
+
+        .updown span:nth-child(11) {
+            animation-delay: 0,5s;
+        }
+
+        .updown span:nth-child(12) {
+            animation-delay: 0.55s;
+        }
+
+        .updown span:nth-child(13) {
+            animation-delay: 0.6s;
+        }
+
+        .updown span:nth-child(14) {
+            animation-delay: 0.65s;
+        }
+
+        .updown span:nth-child(15) {
+            animation-delay: 0.7s;
+        }
+
+        .updown span:nth-child(16) {
+            animation-delay: 0.75s;
+        }
+
+
+/*** 装飾用 ***/
+.updown {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0 auto;
+}

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+  </style>
+  <title>ruby</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="Ruby.css">
+
+</head>
+<body>
+<body class="bg-black">
+    <header>
+        <nav class="navbar" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Ruby</a>
+
+            </div>
+
+        </nav>
+    </header>
+  
+    <dl>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <!-- Line Number-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+        <!-- Unescaped Markup-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/unescaped-markup/prism-unescaped-markup.min.css" rel="stylesheet" />
+
+        <dt>Rubyとは</dt>
+        <dd>・Ruby（ルビー）は、まつもとゆきひろ（通称: Matz）により開発されたオブジェクト指向スクリプト言語。</dd>
+        <dd>・日本で開発されたプログラミング言語としては初めて国際電気標準会議（IEC）で国際規格に認証された事例となった。</dd>
+        <dd>・可読性を重視した構文となっている。Ruby においては整数や文字列なども含めデータ型はすべてがオブジェクトであり、 </dd>
+        <dd>&nbsp;&nbsp;&nbsp;純粋なオブジェクト指向言語といえる。</dd>
+
+        <dt>メッセージ表示</dt>
+        <dd>・puts"表示文字" or print"表示文字" で、メッセージを出力可能。</dd>
+        <dd>・それぞれの違いは、改行の有無。前者は改行され、後者は改行されない。</dd>
+        <dd>・HTML の br と合わせて併用していくと良い</dd>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            puts " "
+            print " "
+        </script>
+
+        <dt>コメント</dt>
+        <dd>・ソースコードにメモを残す際に活用する。</dd>
+        <dd>・コンピュータ側からは、読み込まれない。</dd>
+        <dd>・行の先頭にイコールbeginと、終わりにイコールendを付けて囲むことで複数行。</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            #コメント
+            =begin
+            コメントアウト
+            =end
+        </script>
+
+        <dt>計算</dt>
+        <dd>・四則演算も容易。</dd>
+        <dd>・余りの計算も可能。</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            number = 100
+            puts number
+            puts number+number
+            puts number-number
+            puts number*2
+            puts number/20
+            puts number%3
+            #100 200 0 200 5 1
+        </script>
+
+        <dt>変数</dt>
+        <dd>・変数を文字内に組み込む場合は #{}　を使う</dd>
+        <dd>・文字列も数値も同じ書き方。</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            player = "勇者"
+            puts player
+            puts "#{player}は、荒野を歩いていた"
+            puts "#{player}は、モンスターと戦った"
+            puts "#{player}は、モンスターをたおした"
+        </script>
+
+        <dt>データ型</dt>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            a = 100	#数値
+            b = "paiza"	#文字列
+            c = "100" #文字列
+
+            puts "200" + c #200100
+        </script>
+
+        <dt>乱数</dt>
+        <dd>・ランダムな数が取り出される。</dd>
+        <dd>・1-10の数字から1つ選ぶ</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            num = rand(1..10)
+            puts "スライムが#{num}匹現れた"
+        </script>
+
+        <dt>if文　入力数値によって条件分岐</dt>
+        <dd>・先ほどの乱数とIf文を組み合わせることで、判別もできる。</dd>
+        <dd>・どの言語も、比較演算子はほぼ共通している。</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            num = rand(1..10)
+            puts num
+            if num == 1
+                puts "当たり"
+            elsif num == 2 || num == 6
+                puts "惜しい"
+            elsif num >=3 && num <= 5
+                puts "まずまず"
+            else
+                puts "はずれ"
+            end
+            #    1 :当たり    2or6:惜しい
+            #   3-5:まずまず  7-10:はずれ　と表示される
+            #Rubyの場合 else if は elsif  あとはendを忘れないように
+
+            =start
+            a < b	a が b よりも小さい	10 < 15
+            a > b	a が b よりも大きい	10 > 7
+            a <= b	a が b 以下である	10 <= 15
+            a >= b	a が b 以上である	10 >= 7
+            a != b	a と b が等しくない	10 != 1
+            =end
+        </script>
+
+        <dt>for文 繰り返し処理</dt>
+        <dd>・処理を決まった回数分繰り返す際に活用。</dd>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            for i in 5..10
+                puts "hello world #{i}"
+            end
+
+            =begin
+            hello world 5
+            hello world 6
+            hello world 7
+            hello world 8
+            hello world 9
+            hello world 10
+            =end
+        </script>
+
+        <dt>実用例。</dt>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            puts "<select name='age'>"
+            for age in 1..100
+                puts "<option>#{age}歳</option>"
+            end
+
+            puts "</select>"
+        </script>
+
+        <dt>while文 繰り返し処理</dt>
+        <dd>・処理を条件に達するまで繰り返したい時に活用。</dd>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            i = 1
+            while i <= 10	# 1 -> 2 -> 3 -> 4 ・・・ 10 -> 11
+                puts i
+                i = i + 1
+            end
+            puts "last #{i}"
+
+            =begin
+            1
+            2
+            3
+            4
+            5
+            6
+            7
+            8
+            9
+            10
+            last 11
+            =end
+        </script>
+
+        <dt>入力文字列を受け取る</dt>
+        <dd>・ユーザーから文字入力をしてもらう際に活用。</dd>
+        <dd>・getsを使う。</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            line = gets.to_i
+            puts line * 2
+
+            #入力に記入された数字に２をかける
+        </script>
+
+        <dd>・下記は、標準入力とループ処理 複数行データの読み込み。</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            count = gets.to_i
+            puts("データ個数 #{count}")
+
+            for i in 1..count
+                line = gets
+                puts "hello #{line}"
+            end
+
+            =begin
+            <入力>
+            3
+            sakana
+            tanaka
+            nakata
+            <出力>
+            データ個数：３
+            hello sakana
+            hello tanaka
+            hello nakata
+            =end
+        </script>
+
+        <dd>・下記は西暦年と平成年の対応表。</dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # 1989年から2016年までをループで出力
+            # ループ内で、各西暦年を平成年に変換
+
+            for seireki in 1989..2016
+                print "西暦#{seireki}年は、"
+                heisei = seireki - 1988
+                puts "平成#{heisei}年です。"
+            end
+
+
+            #西暦1989年は、平成1年です。
+            #西暦1990年は、平成2年です。
+            #西暦1991年は、平成3年です。
+            #...
+        </script>
+
+        <dt>配列作成</dt>
+        <dd>・複数のデータ管理に最適。</dd>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            player_1 = "戦士"
+            team = ["勇者", "魔法使い", 100, player_1]
+            puts team
+
+            #勇者
+            #魔法使い
+            #100
+            #戦士
+        </script>
+
+        <dt>配列操作</dt>
+        <dd>・実行途中で、データは変更可能。</dd>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            player_1 = "戦士"
+            team = ["勇者", "魔法使い", 100, player_1]
+            num = 2
+            puts team[0] #直接数値で指定する
+            puts team[num] #変数で指定する
+            puts team[num + 1] #計算式で指定する
+
+            #勇者
+            #100
+            #戦士
+
+            #lengthメソッド　要素の数
+            puts team.length
+
+            #pushメソッド　配列の末尾に要素を追加
+            team.push("戦士")
+            print team
+            puts " "
+
+            #配列の要素を上書き
+            team[0] = "ドラゴン"
+            print team
+            puts " "
+
+            #配列の要素を削除
+            team.delete_at(0)
+            print team
+
+            #4
+            #["勇者", "魔法使い", 100, "戦士", "戦士"]
+            #["ドラゴン", "魔法使い", 100, "戦士", "戦士"]
+            #["魔法使い", 100, "戦士", "戦士"]
+        </script>
+
+        <dt>ループで配列操作</dt>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            # ループで配列を操作する
+            team = ["勇者", "戦士", "魔法使い", "盗賊"]
+            for i in team
+            puts i
+            end
+
+            #eachメソッド ver.
+            team = ["勇者", "戦士", "魔法使い", "盗賊"]
+            team.each do |i|
+            puts i
+            end
+
+            #勇者
+            #戦士
+            #魔法使い
+            #盗賊
+        </script>
+
+        <dt>ハッシュの作成</dt>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            enemy_hash = {"ザコ" => "スライム", "中ボス" => "ドラゴン", "ラスボス" => "魔王"}
+            p enemy_hash
+            # ハッシュの要素にアクセス
+            puts enemy_hash["ザコ"]
+            # 変数でキーを取り出す
+            level ="ザコ"
+            puts enemy_hash[level]
+
+
+            #{"ザコ"=>"スライム", "中ボス"=>"ドラゴン", "ラスボス"=>"魔王"}
+            #スライム
+            #スライム
+        </script>
+
+        <dt>ハッシュの操作</dt>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            enemies = {"ザコ" => "スライム", "中ボス" => "ドラゴン", "ラスボス" => "魔王"}
+            # ハッシュの長さ
+            puts enemies.length
+            # ハッシュの追加
+            enemies["ザコ2"] = "メタルモンスター"
+            p enemies
+            # ハッシュの更新
+            enemies["中ボス"] = "レッドドラゴン"
+            puts enemies.length
+            # ハッシュの削除
+            enemies.delete("ザコ")
+            p enemies
+
+            #{"ザコ"=>"スライム", "中ボス"=>"ドラゴン", "ラスボス"=>"魔王"}
+            #3
+            #{"ザコ"=>"スライム", "中ボス"=>"ドラゴン", "ラスボス"=>"魔王", "ザコ2"=>"メタルモンスター"}
+            #4
+            #{"中ボス"=>"レッドドラゴン", "ラスボス"=>"魔王", "ザコ2"=>"メタルモンスター"}
+        </script>
+
+        <dt>ハッシュをループで操作</dt>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            enemies = {"ザコ" => "スライム", "中ボス" => "ドラゴン", "ラスボス" => "魔王"}
+            enemies.each_value do |enemy|
+                puts "#{enemy}が、現れた！"
+            end
+
+            # ハッシュのキーと値をループで取り出す
+            enemies = {"ザコ" => "スライム", "中ボス" => "ドラゴン", "ラスボス" => "魔王"}
+            enemies.each do |rank, enemy|
+                puts "#{rank}の#{enemy}が、現れた！"
+            end
+        </script>
+
+        <dt>配列の整列</dt>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            items = ["イージスシールド", "ウィンドスピア", "アースブレイカー", "イナズマハンマー"]
+            p items.sort
+            p items.sort.reverse
+
+            #["アースブレイカー", "イナズマハンマー", "イージスシールド", "ウィンドスピア"]
+            #["ウィンドスピア", "イージスシールド", "イナズマハンマー", "アースブレイカー"]
+
+
+            items = {"イージスシールド" => 40, "ウィンドスピア" =>12, "アースブレイカー" =>99}
+
+            #ソートしたらハッシュに戻す
+            p items.sort.to_h
+
+            #値でソートする
+            p items.sort_by {|k, v| v }
+
+            #値でソートしてハッシュに戻す
+            p items.sort_by {|k, v| v }.to_h
+
+
+            #{"アースブレイカー"=>99, "イージスシールド"=>40, "ウィンドスピア"=>12}
+            [["ウィンドスピア", 12], ["イージスシールド", 40], ["アースブレイカー", 99]]
+            #{"ウィンドスピア"=>12, "イージスシールド"=>40, "アースブレイカー"=>99}
+        </script>
+
+        <dt>2次元配列を使った呼び出し</dt>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            team_c = ["勇者", "戦士", "魔法使い"]
+            team_d = ["盗賊", "忍者", "商人"]
+            team_e = ["スライム", "ドラゴン", "魔王"]
+            teams = [team_c, team_d, team_e]
+            p teams
+            p teams[0]
+            p teams[0][0]
+            p teams[0][1]
+            p teams[0][2]
+
+            #[["勇者", "戦士", "魔法使い"], ["盗賊", "忍者", "商人"], #["スライム", "ドラゴン", "魔王"]]
+            #["勇者", "戦士", "魔法使い"]
+            #"勇者"
+            #"戦士"
+            #"魔法使い"
+        </script>
+
+
+        <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Ruby Agaliarept -</a>
+
+</body>
+</html>

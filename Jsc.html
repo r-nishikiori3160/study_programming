@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+  </style>
+  <title>javascript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="Jsc.css">
+
+</head>
+<body>
+<body class="bg-black">
+    <header>
+        <nav class="navbar" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">JavaScript</a>
+
+            </div>
+
+        </nav>
+    </header>
+  
+    <dl>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <!-- Line Number-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+        <!-- Unescaped Markup-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/plugins/unescaped-markup/prism-unescaped-markup.min.css" rel="stylesheet" />
+
+        <dt>JavaScript とは</dt>
+        <dd>
+            ・JavaScript（ジャバスクリプト）は、プログラミング言語であり、HTMLやCSSと並ぶWorldWideWebの中核技術の一つである。</dd>
+        <dd>・プロトタイプベースのオブジェクト指向スクリプト言語であるが、クラスなどのクラスベースに見られる機能も取り込んでいる。</dd>
+        <dd>・利用される場面はウェブサイト、ウェブアプリケーション、バックエンド、デスクトップアプリケーション、モバイルアプリケーションなど、</dd>
+        <dd>&nbsp;&nbsp;&nbsp;ウェブブラウザからサーバ、デスクトップからスマートフォンまで多岐にわたっている。</dd>
+        <dd>・Javaと似た名称を持つが、異なるプログラミング言語である。</dd>
+
+        <dt></dt>
+        <dd></dd>
+
+        <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            魔法の言葉
+            process.stdin.resume();
+            process.stdin.setEncoding('utf8');
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            コンソールログ関数
+            console.log("hello world");
+            console.log(100);
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //コメント　この行は無視されます。
+
+            /*
+            複数範囲コメント
+            */
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            html表示
+            console.log("<p>世界のみなさん、\n");
+            console.log("<b>こんにちは。</b></p>\n");
+
+            \n　で改行（Javascriptコード上）
+
+            JavaScriptで改行しない場合
+            process.stdout.write("<p>世界のみなさん、\n");
+            process.stdout.write("<b>こんにちは。</b></p>\n");
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            変数の登録と表示
+            var player = "勇者";
+            var number = 100;
+            console.log(player+"は、荒野を歩いていた");
+            console.log(number);
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            乱数
+            var randnum = parseInt(Math.random() * 10) + 1;
+            parseIntで小数から整数に　Math.randomで乱数
+            *x x個の数字の中から1つ選ばれる
+            +y yから数え始める数字
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            演算子の計算
+            var number = 100;
+            console.log(number);　　　　　１００
+            console.log(number + 30);　　１３０
+            console.log(number + number);　　//変数同士の計算　　２００
+            console.log(number + 30);　　//足し算　　１３０
+            console.log(number - 30);　　//引き算　　７０
+            console.log(number * 3);　　//掛け算　　　３００
+            console.log(number / 2);　　//割り算　　　５０
+            console.log(10 % 3);　　　　//余り　　　　１
+            console.log(10 + 3 * 2);　　//優先順位　掛け割りが先　　１６
+            console.log((10 + 3) * 2);　//優先順位　（）が先　　　２６
+            console.log("西暦" + 2000 + 5 + "年");　//優先順位　左が先　演算より文字優先　西暦２０００５年
+            console.log(2000 + 5 + "年" + 6 + "月");　//　　２００５年６月
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            値段計算
+            var apple_price = (Math.floor(Math.random() * 3) + 1) * 100;//リンゴの単価
+            var apple_num = Math.floor(Math.random() * 10) + 1;//リンゴを買う数
+            console.log("リンゴの単価：" + apple_price + "円");
+            console.log("リンゴを買う数：" + apple_num + "個");
+            var total = apple_price * apple_num;
+            console.log("合計金額：" + total + "円");
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            データの種類
+            var number = 100 + 40;// 数値
+            var text = "ハロー" + "paiza";// 文字列
+            console.log(number);//　　　　　　　　　140
+            console.log(text);//　　　　　　　　ハローpaiza
+            console.log(number + text);//　　　140ハローpaiza
+            console.log(number + 20);//　　　　　　 160
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            条件式
+            if(条件式){
+                //条件式が成立した時の処理
+            }
+
+            var number = 1;
+            if(number == 1){
+                console.log("スキ！"); //条件式が成立した時の処理
+            } else if (number == 2) {
+                console.log("どちらでもない"); //条件式2が成立した時の処理
+            } else {
+                console.log("キライ！"); //それ以外の処理
+            }
+        </script>
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            おみくじ
+            var number = parseInt(Math.random() * 8) + 1;
+            if(number == 1){
+                console.log("大吉");
+            } else if (number == 2) {
+                console.log("中吉");
+            } else if (number <= 4) {// 3,4
+                console.log("小吉");
+            } else if (number <= 7) {// 5,6,7
+                console.log("凶");
+            } else {// 8
+                console.log("大凶");
+            }
+
+            比較演算子　ifの中の条件式に入れる
+            a == b	a と b が等しい	10 == 10
+            a < b	a が b よりも小さい	10 < 15
+            a > b	a が b よりも大きい	10 > 7
+            a <= b	a が b 以下である	10 <= 15
+            a >= b	a が b 以上である	10 >= 7
+            a != b	a と b が等しくない	10 != 1
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //西暦年から平成年を求める
+            var seireki = 2000;
+            process.stdout.write("西暦"+seireki+"年は、");
+            var heisei = seireki - 1988;
+            console.log("平成"+heisei+"年です。");
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //現在の時刻取得
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var week = today.getDay();
+            var day = today.getDate();
+            var yobi= new Array("日","月","火","水","木","金","土");
+            process.stdout.write("西暦"+year+"年"+month+"月"+day+"日 "+yobi[week]+"曜日");
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //繰り返し
+            var count = 0; // 条件式に使う変数の初期化処理
+            while (count < 6) {
+                console.log(count); // 繰り返し処理
+                count = count + 1; // 条件式に使う変数の値の更新
+            }
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //カウントダウン
+            var count = 5;
+            while (count > 0) {
+                console.log(count);
+                count -= 1;
+            }
+            console.log("START");
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //スライムを倒すまで
+            var hp = 30;
+            while (hp > 0) {
+                let damage = Math.floor(Math.random() * 10);
+                console.log("スライムに" + damage + "のダメージを与えた");
+                hp -= damage;
+            }
+            console.log("スライムを倒した！");
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //勇者VSスライム
+            var myhp = 30;//自HP
+            var enehp = 30;//敵HP
+            while (enehp > 0 && myhp > 0) {//どちらかのHPが0になるまで繰り返す
+
+                //勇者のターン
+                let Pdamage = Math.floor(Math.random() * 10);//ダメージ乱数
+                enehp -= Pdamage;//敵HPからプレイヤー与ダメを引く
+                process.stdout.write("勇者の攻撃！");
+
+                if(enehp <= -1){//敵HPがマイナスになったら0に戻す
+                    enehp = 0;
+                }
+
+                if(Pdamage > 0){//与ダメ1以上
+                console.log("スライムに " + Pdamage + " のダメージを与えた！");
+                console.log("スライムの残り体力は "+enehp);
+                }else{//与ダメ0失敗！
+                console.log("  miss!");
+                console.log("スライムの残り体力は "+enehp);
+                }
+
+
+                console.log("");
+
+                //スライムのターン
+                if(enehp > 0){//既に死んでいたら攻撃しない
+                let Edamage = Math.floor(Math.random() * 10);//ダメージ乱数
+                myhp -= Edamage;//自HPからプレイヤー被ダメを引く
+                process.stdout.write("スライムの攻撃！");
+
+                if(myhp <= -1){//自HPがマイナスになったら0に戻す
+                    myhp = 0;
+                }
+
+                if(Edamage > 0){//被ダメ1以上
+                console.log("勇者は " + Edamage + " のダメージを受けた！");
+                console.log("勇者の残り体力は "+myhp);
+                }else{//被ダメ0失敗！
+                console.log("  miss!");
+                console.log("勇者の残り体力は "+myhp);
+                }
+
+                console.log("");
+                }
+            }
+            //ループを抜ける
+
+            if(enehp <= 0){
+                console.log("スライムを倒した！");
+            }else if(myhp <= 0){
+                console.log("死んでしまった。。。");
+            }
+        </script>
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //for文による繰り返し
+            for (var count = 0; count < 6; count++) {
+                console.log(count);
+            }
+        </script>
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //標準入力で1行データを受け取る
+            process.stdin.resume();
+            process.stdin.setEncoding('utf8');
+
+            var input_string = "";
+            var reader = require('readline').createInterface({
+                input: process.stdin,
+                output: process.stdout
+            });
+            reader.on('line', (line) => {
+                input_string = line
+            });
+            reader.on('close', () => {
+                console.log("hello " + input_string);
+            });
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //数値verに変換して入力数値に100を足す.
+            var input_string = "";
+            var reader = require('readline').createInterface({
+                input: process.stdin,
+                output: process.stdout
+            });
+            reader.on('line', (line) => {
+                input_string = line
+            });
+            reader.on('close', () => {
+                var input_int = parseInt(input_string);
+                var result = input_int + 100;
+                console.log(result);
+            });
+        </script>
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //標準入力で複数行データを受け取る
+            process.stdin.resume();
+            process.stdin.setEncoding('utf8');
+
+            var lines = [];
+            var reader = require('readline').createInterface({
+                input: process.stdin,
+                output: process.stdout
+            });
+            reader.on('line', (line) => {
+                lines.push(line);
+            });
+            reader.on('close', () => {
+                console.log("hello " + lines[0]);
+                console.log("hello " + lines[1]);
+                console.log("hello " + lines[2]);
+            });
+        </script>
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //西暦年と平成年の対応表
+            for (var seireki = 1989; seireki < 2019; seireki++) {
+                let heisei = seireki - 1988;
+                if(heisei == 1){
+                    console.log("西暦" + seireki + "年は平成元年です");
+                }else{
+                    console.log("西暦" + seireki + "年は平成" + heisei + "年です");
+                }
+            }
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            配列
+            データ構造の一種　まとまったデータを扱う　０から要素が始まる
+            並び順管理が必要なデータ処理
+            Webフォームの選択肢
+            エクセルのような複数行データ
+
+            var player1 = "戦士";
+            var player2 = "魔法使い";
+            var team = [player1,player2,"忍者","勇敢な" + player1];
+            var eat = [];
+            eat[0] = "apple"
+            eat[1] = "peach"
+            eat[2] = "orange"
+            console.log(team);
+            console.log(eat);
+            console.log(team[3]);
+            console.log(team[100]);
+
+            /*出力結果
+            [ '戦士', '魔法使い', '忍者', '勇敢な戦士' ]
+            [ 'apple', 'peach', 'orange' ]
+            勇敢な戦士
+            undefined
+            */
+        </script>
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            var team = ["勇者","魔法使い","忍者","勇敢な勇者"];
+            team[team.length] = "商人";//　要素数4つ　0,1,2,3
+            team.push("狩人");//　　　　　　末尾に要素を追加する
+            team[100] = "王様";//　　　　　 100個目に追加
+            console.log(team);
+            console.log(team.length);
+
+            /*出力結果
+            [ '勇者', '魔法使い', '忍者', '勇敢な勇者', '商人', '狩人', <94 empty items>, '王様' ]
+            101
+            */
+        </script>
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //for文出力　配列
+            var team = ["勇者", "戦士", "魔法使い", "忍者"];
+
+            //配列名.lengthで配列の長さがわかるので、
+            //繰り返し条件に指定できる　①
+            for (var index = 0; index < team.length; index++){
+                console.log(team[index]);
+            }
+
+            // [!] 必ずしも0から順番に取得できるとは限らない　②
+            for (var index in team){
+                console.log(team[index]);
+            }
+            // ECMA Scriptが使える環境でのみ可能　③
+            for (var value of team) {
+                console.log(value);
+            }
+
+            //foreach文 　=> は「アロー関数」　④
+            team.forEach(value => {
+                console.log(value);
+            })
+
+            /*出力結果（①、②、③、④、４つとも同じ結果）
+            勇者
+            戦士
+            魔法使い
+            忍者
+            */
+        </script>
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //split で標準入力のものをカンマで区切りそれを配列にする
+            process.stdin.resume();
+            process.stdin.setEncoding('utf8');
+
+            var input_string = "";
+            var reader = require('readline').createInterface({
+                input: process.stdin,
+                output: process.stdout
+            });
+
+            reader.on('line', (line) => {
+                input_string = line;
+            });
+
+            reader.on('close', () => {
+                var values = input_string.split(",");
+
+                for (var monster of values) {
+                    console.log(monster + "が現れた");
+                }
+            });
+
+            /*
+            入力　松岡修造,スライム,ドラゴン
+            出力　
+            松岡修造が現れた
+            スライムが現れた
+            ドラゴンが現れた
+            */
+        </script>
+
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            //標準入力から受け取った複数行のものを配列にする
+            process.stdin.resume();
+            process.stdin.setEncoding('utf8');
+
+            var lines = [];
+            var reader = require('readline').createInterface({
+                input: process.stdin,
+                output: process.stdout
+            });
+
+            reader.on('line', (line) => {
+                lines.push(line);
+            });
+
+            reader.on('close', () => {
+             for (var value of lines) {
+                    console.log("hello " + value);
+                }
+            });
+
+            /*
+            入力
+            tanaka
+            nakamura
+            baba
+            nishiki
+            出力　
+            hello tanaka
+            hello nakamura
+            hello baba
+            hello nishiki
+            */
+        </script>
+
+
+            <script type="text/plain" class="language-html line-numbers" data-line="1,2">
+            // じゃんけんプログラム
+
+            process.stdin.resume();
+            process.stdin.setEncoding('utf8');
+
+            var input_string = "";
+            var reader = require('readline').createInterface({
+                input: process.stdin,
+                output: process.stdout
+            });
+
+            reader.on('line', (line) => {
+                input_string = line;
+            });
+
+            reader.on('close', () => {
+                var values = input_string.split(",");
+
+                // 配列をそのまま出力する
+                console.log(values)
+
+                // 生成するランダムな数値の範囲を調べる
+                var hands = values.length;
+
+                // ランダムにインデックスを生成する
+                var target = Math.floor(Math.random() * hands);
+
+                // 選ばれた手を出力する
+                console.log(values[target]);
+            });
+        </script>
+
+            <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JavaScript Satanachia -</a>
+
+</body>
+</html>
